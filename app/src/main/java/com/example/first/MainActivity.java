@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public void funcOnClick(View view) {
         Button button = (Button) view;
         text_result = findViewById(R.id.textViewResult);
+        text_result.setTextSize(60);
         if (button.getId() == R.id.buttonAc) {
             text_result.setText("");
         }
@@ -87,22 +88,27 @@ public class MainActivity extends AppCompatActivity {
         switch (operator) {
             case '+':
                 result = num1 + num2;
+                text_result.setTextSize(60);
                 text_result.setText("Result: " + result);
                 break;
             case '-':
                 result = num1 - num2;
+                text_result.setTextSize(60);
                 text_result.setText("Result: " + result);
                 break;
             case '*':
                 result = num1 * num2;
+                text_result.setTextSize(60);
                 text_result.setText("Result: " + result);
                 break;
             case '/':
                 if (num2 != 0) {
                     result = num1 / num2;
+                    text_result.setTextSize(60);
                     text_result.setText("Result: " + result);
                 } else {
-                    text_result.setText("Error");
+                    text_result.setTextSize(40);
+                    text_result.setText("Error Cant Divide By Zero\n Press AC To Reset");
                     return;
                 }
                 break;
